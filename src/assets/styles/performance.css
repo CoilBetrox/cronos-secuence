@@ -1,0 +1,30 @@
+/* performance.css - Optimizaciones generales */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Forzar GPU acceleration para elementos animados */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimizar transiciones */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Prevenir layout thrashing */
+.prevent-thrashing {
+  will-change: transform, opacity;
+}
+
+/* Optimizar botones específicamente */
+button, .p-button, [role="button"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: 
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}

@@ -1,0 +1,180 @@
+@import './styles/base.css';
+@import './styles/performance.css';
+
+#app {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PrimeVue overrides */
+:deep(.p-inputtext) {
+  padding: 0.75rem 1rem !important;
+  border-radius: 12px !important;
+  border: 2px solid #e5e7eb !important;
+  font-size: 0.9375rem !important;
+  transition: all 0.2s ease !important;
+}
+
+:deep(.p-inputtext:focus) {
+  outline: none !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+:deep(.p-button) {
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+/* =======================
+ * INPUT NUMBER OPTIMIZATIONS
+ * ======================= */
+:deep(.p-inputnumber) {
+  width: auto !important;
+}
+
+:deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-input) {
+  border-radius: 10px !important; /* Aumentado para coincidir con TimerList */
+  padding: 0.5rem !important; /* Aumentado para desktop */
+  font-size: 1rem !important; /* Aumentado para desktop */
+  text-align: center !important;
+  min-height: 44px !important; /* Aumentado para desktop */
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+:deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-button) {
+  width: 28px !important; /* Aumentado para desktop */
+  height: 22px !important; /* Aumentado para desktop */
+  min-height: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+}
+
+:deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-button-up) {
+  border-radius: 10px 10px 0 0 !important;
+  margin-bottom: 1px !important;
+}
+
+:deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-button-down) {
+  border-radius: 0 0 10px 10px !important;
+}
+
+/* Hover effects for buttons */
+:deep(.p-inputnumber-button:hover) {
+  background: #f3f4f6 !important;
+}
+
+.dark :deep(.p-inputnumber-button:hover) {
+  background: #475569 !important;
+}
+
+/* Focus styles */
+:deep(.p-inputnumber-input:focus) {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.dark :deep(.p-inputnumber-input:focus) {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2) !important;
+}
+
+/* =======================
+ * DARK MODE OVERRIDES
+ * ======================= */
+.dark :deep(.p-inputtext) {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+  color: #f8fafc !important;
+}
+
+.dark :deep(.p-inputtext:focus) {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2) !important;
+}
+
+.dark :deep(.p-inputnumber-input) {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+  color: #f8fafc !important;
+}
+
+.dark :deep(.p-inputnumber-button) {
+  background: #334155 !important;
+  border-color: #475569 !important;
+  color: #cbd5e1 !important;
+}
+
+/* =======================
+ * RESPONSIVE ADJUSTMENTS
+ * ======================= */
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem;
+  }
+  
+  :deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-input) {
+    padding: 0.375rem 0.5rem !important;
+    font-size: 0.9375rem !important;
+    min-height: 40px !important;
+    border-radius: 8px !important;
+  }
+  
+  :deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-button) {
+    width: 24px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+  }
+  
+  :deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-button-up) {
+    border-radius: 8px 8px 0 0 !important;
+  }
+  
+  :deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-button-down) {
+    border-radius: 0 0 8px 8px !important;
+  }
+}
+
+/* =======================
+ * DESKTOP LARGE ENHANCEMENTS
+ * ======================= */
+@media (min-width: 1025px) {
+  :deep(.p-inputnumber.p-inputnumber-buttons-vertical .p-inputnumber-input) {
+    min-width: 85px !important; /* Coincide con TimerList */
+  }
+}
+
+/* =======================
+ * ELIMINAR TRANSFORMACIONES NO DESEADAS
+ * ======================= */
+:deep(.p-inputtext),
+:deep(.p-button),
+.timer-row {
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+:deep(.timer-row:hover) {
+  transform: none !important;
+}
+
+/* =======================
+ * UTILITY CLASSES
+ * ======================= */
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
