@@ -7,10 +7,8 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
+    "build": "vite build",
+    "build:full": "run-p type-check \"build-only {@}\" --",
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
