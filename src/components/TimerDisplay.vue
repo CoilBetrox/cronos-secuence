@@ -195,19 +195,37 @@ function formatDuration(duration) {
 @media (max-width: 768px) {
   .timer-display {
     padding: 1rem;
+    gap: 1.5rem;
   }
   
   .finish-btn {
-    padding: 0.875rem 2rem;
+    padding: 0.875rem 1.5rem;
     width: 100%;
+  }
+
+  .current {
+    padding: 1.5rem 1rem; 
+    margin: 0 -0.5rem; 
+    border-radius: 16px;
+    overflow: hidden;
   }
   
   .current .time {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    letter-spacing: -2px;
+    margin: 0.25rem 0;
+    line-height: 1.1;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .next {
+    padding: 1rem;
+    margin-top: 1rem;
   }
   
   .next .time {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 }
 </style>
